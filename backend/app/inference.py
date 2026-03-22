@@ -52,9 +52,6 @@ class BrainTumorClassifier:
             self.model.to(self.device)
             self.model.eval()
             
-            print(f"✓ Model loaded: {settings.MODEL_VERSION}")
-            print(f"✓ Best val accuracy: {checkpoint['val_acc']:.2f}%")
-            
         except Exception as e:
             raise RuntimeError(f"Failed to load model: {str(e)}")
     
