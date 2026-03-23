@@ -1,31 +1,31 @@
 {
-  "test_accuracy": 0.9855699855699855,
-  "roc_auc": 0.9993336665000833,
+  "test_accuracy": 0.96875,
+  "roc_auc": 1.0,
   "classification_report": {
     "Healthy": {
-      "precision": 0.9912023460410557,
-      "recall": 0.9797101449275363,
-      "f1-score": 0.9854227405247813,
-      "support": 345.0
+      "precision": 1.0,
+      "recall": 0.9310344827586207,
+      "f1-score": 0.9642857142857143,
+      "support": 29.0
     },
     "Tumor": {
-      "precision": 0.9801136363636364,
-      "recall": 0.9913793103448276,
-      "f1-score": 0.9857142857142858,
-      "support": 348.0
+      "precision": 0.9459459459459459,
+      "recall": 1.0,
+      "f1-score": 0.9722222222222222,
+      "support": 35.0
     },
-    "accuracy": 0.9855699855699855,
+    "accuracy": 0.96875,
     "macro avg": {
-      "precision": 0.985657991202346,
-      "recall": 0.985544727636182,
-      "f1-score": 0.9855685131195335,
-      "support": 693.0
+      "precision": 0.972972972972973,
+      "recall": 0.9655172413793103,
+      "f1-score": 0.9682539682539683,
+      "support": 64.0
     },
     "weighted avg": {
-      "precision": 0.9856339896662477,
-      "recall": 0.9855699855699855,
-      "f1-score": 0.9855691441697273,
-      "support": 693.0
+      "precision": 0.9704391891891891,
+      "recall": 0.96875,
+      "f1-score": 0.9686259920634921,
+      "support": 64.0
     }
   },
   "confusion_matrix": [
@@ -39,5 +39,5 @@
     ]
   ],
   "model_version": "v0.1.0",
-  "evaluation_date": "2026-03-22T10:16:40.053448"
+  "evaluation_date": "2026-03-22T22:03:16.228552"
 }

@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./brain_tumor_diagnosis.db"
     
     # Device
-    DEVICE: str = "cpu"  # Change to "cuda" if GPU available
+    DEVICE: str = "cpu"  
     
     class Config:
         env_file = ".env"

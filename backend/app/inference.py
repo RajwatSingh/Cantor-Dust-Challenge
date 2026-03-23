@@ -56,13 +56,6 @@ class BrainTumorClassifier:
             raise RuntimeError(f"Failed to load model: {str(e)}")
     
     def determine_confidence(self, probability: float) -> tuple[str, bool]:
-        """
-        Determine confidence level and human review requirement [1]
-        
-        Returns:
-            confidence_level: 'high', 'medium', or 'low'
-            requires_review: True if low confidence
-        """
         if probability >= settings.HIGH_CONFIDENCE_THRESHOLD or \
            probability <= (1 - settings.HIGH_CONFIDENCE_THRESHOLD):
             return "high", False
@@ -90,13 +83,10 @@ class BrainTumorClassifier:
             tumor_prob = probabilities[0][1].item()
             predicted_class = 1 if tumor_prob > 0.5 else 0
         
-        # Calculate inference time
         inference_time_ms = int((time.time() - start_time) * 1000)
         
-        # Determine confidence and review flag [1]
         confidence, requires_review = self.determine_confidence(tumor_prob)
         
-        # Generate image hash for audit trail
         image_hash = hashlib.md5(image.tobytes()).hexdigest()
         
         return {
@@ -110,5 +100,4 @@ class BrainTumorClassifier:
             "image_hash": image_hash
         }
 
-# Global model instance
 classifier = BrainTumorClassifier()

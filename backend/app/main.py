@@ -103,6 +103,20 @@ def get_history(
     
     return logs
 
+@app.delete("/history")
+def clear_history(db: Session = Depends(get_db)):
+    """
+    Completely wipe the audit log (Admin only in production)
+    """
+    try:
+        # Delete all rows in the InferenceLog table
+        db.query(InferenceLog).delete()
+        db.commit()
+        return {"message": "History cleared successfully", "status": "success"}
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Failed to clear history: {str(e)}")
+
 @app.get("/stats")
 def get_stats(db: Session = Depends(get_db)):
     """Summary statistics for monitoring"""

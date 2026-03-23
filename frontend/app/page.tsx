@@ -12,14 +12,12 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null); // NEW
 
-  // Now just stores the file, doesn't analyze yet
   const handleFileSelected = (file: File) => {
     setSelectedFile(file);
     setResult(null);      // Clear previous results
     setError(null);       // Clear previous errors
   };
 
-  // Only runs when button is clicked
   const handleAnalyze = async () => {
     if (!selectedFile) return;
     
@@ -45,7 +43,6 @@ export default function Home() {
     }
   };
 
-  // Reset everything
   const handleReset = () => {
     setSelectedFile(null);
     setResult(null);
@@ -152,8 +149,9 @@ export default function Home() {
           </div>
         )}
 
-        {/* Results [1] */}
-        {result && <PredictionResult result={result} />}
+	{/* Results - pass filename for save feature */}
+	{/* Results [1] */}
+	{result && <PredictionResult result={result} />}
       </div>
     </main>
   );

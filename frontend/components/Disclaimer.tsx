@@ -4,7 +4,7 @@ export default function Disclaimer() {
       <div className="flex items-start">
         <div className="ml-3">
           <p className="text-sm font-bold text-yellow-800">
-            ⚠️ Important Medical Disclaimer
+             Important Medical Disclaimer
           </p>
           <p className="text-sm text-yellow-700 mt-1">
             This tool is a <strong>research prototype only</strong> and is{' '}
