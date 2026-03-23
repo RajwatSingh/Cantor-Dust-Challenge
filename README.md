@@ -31,6 +31,11 @@ This is not a diagnosis interface, this is a research prototype. This is a AI th
 
 ---
 
+## Demo Video
+https://github.com/user-attachments/assets/aea8f738-c4a8-4fbb-b30a-c3d83d9ba464
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |
