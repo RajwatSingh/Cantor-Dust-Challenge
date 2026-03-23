@@ -32,7 +32,7 @@ export default function PredictionResult({ result }: PredictionResultProps) {
       <div className="mb-4">
         <div className="flex justify-between text-sm mb-1">
           <span className="text-gray-600">Tumor Probability</span>
-          <span className="font-medium">
+          <span className="text-gray-600">
             {(result.tumor_probability * 100).toFixed(1)}%
           </span>
         </div>
